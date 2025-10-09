@@ -22,6 +22,20 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  // Example sign-in button
+  document.getElementById("login").onclick = () => signInWithPopup(auth, provider);
+  document.getElementById("logout").onclick = () => signOut(auth);
+
+  onAuthStateChanged(auth, user => {
+    if (user) {
+      document.getElementById("status").textContent = `Hello, ${user.displayName}`;
+    } else {
+      document.getElementById("status").textContent = "Not logged in";
+    }
+  });
   </script>
   <title>Hello Nopa</title>
   <h1>
