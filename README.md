@@ -1,1 +1,0 @@
-# saynopa.github.io
