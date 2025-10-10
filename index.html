@@ -1,74 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nopa — Smart. Simple. Secure.</title>
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nopa — Smart. Simple. Secure.</title>
 
-    <style>
-      body {
-        margin: 0;
-        font-family: "Inter", sans-serif;
-        background-color: #f8f9fb;
-        color: #333;
-        text-align: center;
-      }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 
-      /* === SLIDER CONTAINER === */
-      .slider {
-        max-height: 65vh;
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-      }
+  <style>
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background-color: #f8f9fb;
+      color: #333;
+      text-align: center;
+    }
 
-      .slide {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: opacity 0.8s ease;
-      }
+    /* === SLIDER CONTAINER === */
+    .slider {
+      max-height: 65vh;
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-      .slide.active {
-        opacity: 1;
-        z-index: 1;
-      }
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    .slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
 
 
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 2rem;
-        background: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
 
-      header img {
-        height: 40px;
-      }
+    header img {
+      height: 40px;
+    }
 
 
-            /* === HERO SLIDE === */
-      .hero {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: white;
-        background-image: url("https://saynopa.com/cdn/shop/files/Frame_132_4d2dd98c-ccab-42e7-9ebb-ede5556a3780.jpg");
-        background-size: cover;
-        background-position: center;
-      }
-/* 
+    /* === HERO SLIDE === */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      background-image: url("https://saynopa.com/cdn/shop/files/Frame_132_4d2dd98c-ccab-42e7-9ebb-ede5556a3780.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* 
       .hero::before {
         content: "";
         position: absolute;
@@ -76,29 +75,31 @@
         background: rgba(0, 0, 0, 0.45);
       } */
 
-            .hero > div {
-        position: relative;
-        z-index: 2;
-        max-width: 600px;
-        padding: 2rem;
-      }
-/* === MAP SLIDE === */
-      .map iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
+    .hero>div {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      padding: 2rem;
+    }
 
-      /* === NAVIGATION BUTTONS === */
-      .slider-nav {
-  position: relative;
-  margin: 1.5rem auto;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  z-index: 10;
-}
-      /* .slider-nav {
+    /* === MAP SLIDE === */
+    .map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* === NAVIGATION BUTTONS === */
+    .slider-nav {
+      position: relative;
+      margin: 1.5rem auto;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      z-index: 10;
+    }
+
+    /* .slider-nav {
         position: absolute;
         bottom: 20px;
         left: 50%;
@@ -108,333 +109,344 @@
         z-index: 10;
       } */
 
-      .nav-dot {
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
-        background: gray;
-        /* background: rgba(255, 255, 255, 0.5); */
-        cursor: pointer;
-        transition: background 0.3s;
-      }
+    .nav-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: gray;
+      /* background: rgba(255, 255, 255, 0.5); */
+      cursor: pointer;
+      transition: background 0.3s;
+    }
 
-      .nav-dot.active {
-        background: orange;
-        /* background: white; */
-      }
+    .nav-dot.active {
+      background: orange;
+      /* background: white; */
+    }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 600px;
-  padding: 2rem;
-  backdrop-filter: blur(2px);
-}
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      padding: 2rem;
+      backdrop-filter: blur(2px);
+    }
 
-.login-buttons {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
+    .login-buttons {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
 
-.login-buttons button {
-  padding: 0.75rem 1.25rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #333;
-  transition: background 0.3s;
-}
+    .login-buttons button {
+      padding: 0.75rem 1.25rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #333;
+      transition: background 0.3s;
+    }
 
-.login-buttons button:hover {
-  background-color: #fff;
-}
-      .hero h1 {
-        font-size: 2.2rem;
-        margin-bottom: 0.5rem;
-      }
+    .login-buttons button:hover {
+      background-color: #fff;
+    }
 
-      .hero p {
-        font-size: 1.1rem;
-        color: white;
-        max-width: 600px;
-        margin-bottom: 2rem;
+    .hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: white;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .hero img {
+      width: 280px;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .login-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 260px;
+      margin: 0 auto;
+      color: white;
+    }
+
+    button {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    #google-login {
+      color: white;
+      background-color: orange;
+    }
+
+    #apple-login {
+      color: white;
+      background-color: #000000;
+    }
+
+    #facebook-login {
+      color: white;
+      background-color: #1877f2;
+    }
+
+    #logout {
+      background-color: orange;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+
+    footer {
+      /* padding: 1rem; */
+      font-size: 0.9rem;
+      color: #777;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 16px;
+    }
+
+    .social-icons a {
+      color: #555;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .social-icons a:hover {
+      color: #000;
+    }
+
+    .social-icons svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .merchant {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70vh;
+      background: #f9f9f9;
+      flex-direction: column;
+      position: relative;
+      text-align: center;
+      font-family: "Inter", sans-serif;
+    }
+
+    .tumbler-image {
+      width: 100%;
+      /* height: 60vh; */
+      /* display: block; */
+      /* object-fit: scale-down; */
+      /* margin-bottom: 20px; */
+    }
+
+    .warning {
+      min-width: 40vh;
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: white;
+      color: orange;
+      border: none;
+      padding: 14px 14px;
+      font-size: 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.2s ease;
+    }
+
+    .unlink-btn {
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: white;
+      color: orange;
+      border: none;
+      padding: 14px 36px;
+      font-size: 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.2s ease;
+    }
+
+    .link-btn {
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: orange;
+      color: white;
+      border: none;
+      padding: 14px 36px;
+      font-size: 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.2s ease;
+    }
+
+    .checkin-btn {
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: orange;
+      color: white;
+      border: none;
+      padding: 14px 36px;
+      font-size: 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.2s ease;
+    }
+
+    .checkin-btn:hover {
+      background-color: black;
+      /* background-color: #005ecb; */
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        gap: 3rem;
+        min-height: 70vh;
+        /* show footer */
       }
 
       .hero img {
-        width: 280px;
-        border-radius: 12px;
-        margin-bottom: 2rem;
+        width: 350px;
       }
 
       .login-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        width: 260px;
-        margin: 0 auto;
-        color: white;
+        width: 300px;
       }
+    }
 
-      button {
-        padding: 0.75rem;
-        border: none;
-        border-radius: 8px;
-        font-size: 1rem;
-        cursor: pointer;
-        color: white;
-      }
+    .whats-new {
+      margin-top: 40px;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+    }
 
-      #google-login {
-        color: white;
-        background-color: orange;
-      }
-
-      #apple-login {
-        color: white;
-        background-color: #000000;
-      }
-
-      #facebook-login {
-        color: white;
-        background-color: #1877f2;
-      }
-
-      #logout {
-        background-color: orange;
-      }
-
-      iframe {
-        width: 100%;
-        height: 300px;
-        border: none;
-      }
-
-      footer {
-        /* padding: 1rem; */
-        font-size: 0.9rem;
-        color: #777;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .social-icons {
-        display: flex;
-        gap: 16px;
-      }
-
-      .social-icons a {
-        color: #555;
-        text-decoration: none;
-        transition: color 0.2s;
-      }
-
-      .social-icons a:hover {
-        color: #000;
-      }
-
-      .social-icons svg {
-        width: 22px;
-        height: 22px;
-      }
-
-  .merchant {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70vh;
-  background: #f9f9f9;
-  flex-direction: column;
-  position: relative;
-  text-align: center;
-  font-family: "Inter", sans-serif;
-}
-
-.tumbler-image {
-  width: 100%;
-  /* height: 60vh; */
-  /* display: block; */
-  /* object-fit: scale-down; */
-  /* margin-bottom: 20px; */
-}
-
-.warning {
-  min-width: 40vh;
-  position: fixed;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: white;
-  color: orange;
-  border: none;
-  padding: 14px 14px;
-  font-size: 18px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  transition: background-color 0.2s ease;
-}
-
-.unlink-btn {
-  position: fixed;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: white;
-  color: orange;
-  border: none;
-  padding: 14px 36px;
-  font-size: 18px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  transition: background-color 0.2s ease;
-}
-
-.link-btn {
-  position: fixed;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: orange;
-  color: white;
-  border: none;
-  padding: 14px 36px;
-  font-size: 18px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  transition: background-color 0.2s ease;
-}
-
-.checkin-btn {
-  position: fixed;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: orange;
-  color: white;
-  border: none;
-  padding: 14px 36px;
-  font-size: 18px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  transition: background-color 0.2s ease;
-}
-
-.checkin-btn:hover {
-  background-color: black;
-  /* background-color: #005ecb; */
-}
-
-      @media (min-width: 768px) {
-        .hero {
-          flex-direction: row;
-          justify-content: center;
-          padding-top: 2rem;
-          padding-bottom: 2rem;
-          gap: 3rem;
-          min-height: 70vh; /* show footer */
-        }
-
-        .hero img {
-          width: 350px;
-        }
-
-        .login-buttons {
-          width: 300px;
-        }
-      }
-
-      .whats-new {
-  margin-top: 40px;
-  text-align: center;
-  font-family: 'Inter', sans-serif;
-}
-
-/* .whats-new h2 {
+    /* .whats-new h2 {
   font-size: 1.8rem;
   margin-bottom: 15px;
 } */
 
-.instagram-slider {
-  position: relative;
-  width: 90%;
-  max-width: 600px;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+    .instagram-slider {
+      position: relative;
+      width: 90%;
+      max-width: 600px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-.slides {
-  display: flex;
-  transition: transform 0.4s ease-in-out;
-}
+    .slides {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+    }
 
-.slide {
-  min-width: 100%;
-  box-sizing: border-box;
-}
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
 
-.slide img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+    .slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 50%;
-}
+    .prev,
+    .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
 
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+    .prev {
+      left: 10px;
+    }
 
-.stats {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  margin: 20px 0;
-}
+    .next {
+      right: 10px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
 
 
-.chart-wrapper {
-  width: 20vh;   /* fixed width */
-  height: 20vh;  /* fixed height */
-}
+    .chart-wrapper {
+      width: 20vh;
+      /* fixed width */
+      height: 20vh;
+      /* fixed height */
+    }
 
 
-@media (max-width: 100px) {
-  .stats {
-    flex-direction: column;
-    gap: 15px;
-  }
-}
-    </style>
-  </head>
+    @media (max-width: 100px) {
+      .stats {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
 <script>
   // Check for mandatory query param
   const params = new URLSearchParams(window.location.search);
@@ -462,48 +474,46 @@
   // Optional: store it globally for later use
   window.NOPA_DEVICE_ID = deviceId;
 </script>
-  <body>
-    <header>
-      <img
-        src="https://saynopa.com/cdn/shop/files/NOPAMOVE_logo.png"
-        alt="Company Logo"
-      />
-      <p id="status">Loading...</p>
-      <button id="logout" style="display: none">Sign Out</button>
-    </header>
+
+<body>
+  <header>
+    <img src="https://saynopa.com/cdn/shop/files/NOPAMOVE_logo.png" alt="Company Logo" />
+    <p id="status">Loading...</p>
+    <button id="logout" style="display: none">Sign Out</button>
+  </header>
 
 
-    <!-- Merchant Section -->
-<div class="merchant" style="display: none;">
-  <div class="merchant-content">
-    <img src="https://saynopa.com/cdn/shop/files/0000.png" alt="Tumbler" class="tumbler-image" />
-    <button id="check-in" class="checkin-btn">Check In</button>
+  <!-- Merchant Section -->
+  <div class="merchant" style="display: none;">
+    <div class="merchant-content">
+      <img src="https://saynopa.com/cdn/shop/files/0000.png" alt="Tumbler" class="tumbler-image" />
+      <button id="check-in" class="checkin-btn">Check In</button>
+    </div>
   </div>
-</div>
 
   <!-- User Section -->
   <div class="user" style="display: none;">
     <h2 id="welcome">Dashboard</h2>
     <p id="details">Just one tap away from unlocking your reuse stats and rewards.</p>
     <div id="stats" class="stats">
-<div class="chart-wrapper">
-    <canvas id="monthlyChart"></canvas>
-  </div>
-  <div class="chart-wrapper">
-    <canvas id="totalChart"></canvas>
-  </div>
-</div>
+      <div class="chart-wrapper">
+        <canvas id="monthlyChart"></canvas>
+      </div>
+      <div class="chart-wrapper">
+        <canvas id="totalChart"></canvas>
+      </div>
+    </div>
 
-  <div id="history" class="history">
-    <h4>Recent Uses</h4>
-    <ul id="history-list">
-      <li>10/10/2025: Reused tumbler #123</li>
-      <li>10/09/2025: Reused tumbler #124</li>
-      <li>10/08/2025: Reused tumbler #125</li>
-    </ul>
-  </div>
+    <div id="history" class="history">
+      <h4>Recent Uses</h4>
+      <ul id="history-list">
+        <li>10/10/2025: Reused tumbler #123</li>
+        <li>10/09/2025: Reused tumbler #124</li>
+        <li>10/08/2025: Reused tumbler #125</li>
+      </ul>
+    </div>
 
-        <!-- What's New Section -->
+    <!-- What's New Section -->
     <!-- <div class="whats-new">
       <h2>What's New?</h2>
       <div class="instagram-slider">
@@ -517,80 +527,69 @@
         <button class="next">&#10095;</button>
       </div>
     </div> -->
-    <div class = "reward">
+    <div class="reward">
       <h2>Reward near you</h2>
-    <iframe
-          src="https://www.google.com/maps/d/embed?mid=1nt8NnPvjOCIr4fE3KCSzawvggkY5vWU&ehbc=2E312F"
-          allowfullscreen=""
-          loading="lazy"
-        ></iframe>
+      <iframe src="https://www.google.com/maps/d/embed?mid=1nt8NnPvjOCIr4fE3KCSzawvggkY5vWU&ehbc=2E312F"
+        allowfullscreen="" loading="lazy"></iframe>
     </div>
-    <button class ="link-btn" id="link">Link</button>
-        <button class ="unlink-btn" id="unlink">Unlink</button>
-    <p class = "warning" id="warning">This tumbler belongs to another. Please ask the owner to unlink before linking.</p>
+    <button class="link-btn" id="link">Link</button>
+    <button class="unlink-btn" id="unlink">Unlink</button>
+    <p class="warning" id="warning">This tumbler belongs to another. Please ask the owner to unlink before linking.</p>
   </div>
 
-      <div class="slider">
-      <!-- Slide 1 -->
-      <section class="slide hero active">
-        <div>
-          <h1>Redefining sustainability, one sip at a time.</h1>
-          <!-- <p>
+  <div class="slider">
+    <!-- Slide 1 -->
+    <section class="slide hero active">
+      <div>
+        <h1>Redefining sustainability, one sip at a time.</h1>
+        <!-- <p>
            Nopa Move, sản phẩm đầu tiên của chúng mình, được thiết kế dành riêng cho văn hóa và thói quen của Đông Nam Á. Không chỉ là một chiếc bình, Nopa Move còn là chìa khóa mở ra đa dạng phần thưởng, để bạn thoải mái thưởng thức những đồ uống yêu thích của mình và đồng hành cùng cộng đồng hướng đến những thay đổi tích cực.
           </p> -->
 
-          <div class="login-buttons">
-            <button id="google-login">Sign in with Google</button>
-            <button id="apple-login">Sign in with Apple</button>
-            <button id="facebook-login">Sign in with Facebook</button>
-            <!-- <button id="logout" style="display: none">Sign Out</button> -->
-          </div>
+        <div class="login-buttons">
+          <button id="google-login">Sign in with Google</button>
+          <button id="apple-login">Sign in with Apple</button>
+          <button id="facebook-login">Sign in with Facebook</button>
+          <!-- <button id="logout" style="display: none">Sign Out</button> -->
         </div>
-      </section>
-
-      <!-- Slide 2 -->
-      <section class="slide map">
-        <iframe
-          src="https://www.google.com/maps/d/embed?mid=1nt8NnPvjOCIr4fE3KCSzawvggkY5vWU&ehbc=2E312F"
-          allowfullscreen=""
-          loading="lazy"
-        ></iframe>
-      </section>
-    </div>
-          <div class="slider-nav">
-        <div class="nav-dot active" data-slide="0"></div>
-        <div class="nav-dot" data-slide="1"></div>
       </div>
+    </section>
 
-    <script>
-      const slides = document.querySelectorAll(".slide");
-      const dots = document.querySelectorAll(".nav-dot");
-      let currentSlide = 0;
+    <!-- Slide 2 -->
+    <section class="slide map">
+      <iframe src="https://www.google.com/maps/d/embed?mid=1nt8NnPvjOCIr4fE3KCSzawvggkY5vWU&ehbc=2E312F"
+        allowfullscreen="" loading="lazy"></iframe>
+    </section>
+  </div>
+  <div class="slider-nav">
+    <div class="nav-dot active" data-slide="0"></div>
+    <div class="nav-dot" data-slide="1"></div>
+  </div>
 
-      function showSlide(index) {
-        slides.forEach((slide, i) => {
-          slide.classList.toggle("active", i === index);
-          dots[i].classList.toggle("active", i === index);
-        });
-        currentSlide = index;
-      }
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".nav-dot");
+    let currentSlide = 0;
 
-      // Dot click navigation
-      dots.forEach((dot, i) =>
-        dot.addEventListener("click", () => showSlide(i))
-      );
-    </script>
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+        dots[i].classList.toggle("active", i === index);
+      });
+      currentSlide = index;
+    }
 
-    <footer>
-      <div class="social-icons">
-<a href="https://saynopa.com" target="_blank" aria-label="Website">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="currentColor"
-    viewBox="0 0 24 24"
-  >
-    <path
-      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10
+    // Dot click navigation
+    dots.forEach((dot, i) =>
+      dot.addEventListener("click", () => showSlide(i))
+    );
+  </script>
+
+  <footer>
+    <div class="social-icons">
+      <a href="https://saynopa.com" target="_blank" aria-label="Website">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10
          10-4.48 10-10S17.52 2 12 2Zm0 1.5
          c4.69 0 8.5 3.81 8.5 8.5
          s-3.81 8.5-8.5 8.5
@@ -601,476 +600,460 @@
          c0 .35.4.75.75.75h3
          c.35 0 .75-.4.75-.75v-1.5
          l2.25-1.5v-2.25l-2.25-1.5V9
-         l1.5-1.5V6.25c0-.35-.4-.75-.75-.75h-3Z"
-    />
-  </svg>
-</a>
-        <a href="https://www.instagram.com/nopa.design/" target="_blank" aria-label="Instagram">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5ZM12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7ZM17.5 6a1 1 0 1 1 0 2a1 1 0 0 1 0-2Z"
-            />
-          </svg>
-        </a>
-        <a href="https://www.facebook.com/NopaProductDesign" target="_blank" aria-label="Facebook">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5a3.5 3.5 0 0 1 3.8-3.9c1.1 0 2.2.2 2.2.2v2.5H15a1.5 1.5 0 0 0-1.7 1.6V12H17l-.5 3h-2.2v7A10 10 0 0 0 22 12Z"
-            />
-          </svg>
-        </a>
-        <a href="https://www.linkedin.com/company/nopa-pdx/" target="_blank" aria-label="LinkedIn">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6a2.5 2.5 0 0 1 2.48-2.5ZM3 8h4v13H3V8Zm7 0h3.6v1.8h.1a3.95 3.95 0 0 1 3.6-2c3.8 0 4.5 2.5 4.5 5.7V21h-4v-6.2c0-1.5 0-3.3-2-3.3c-2 0-2.3 1.6-2.3 3.2V21h-4V8Z"
-            />
-          </svg>
-        </a>
-      </div>
-      <p>© 2025 NOPA DESIGN LLC. All rights reserved.</p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script type="module">
-      import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-analytics.js";
-      import {
-  getDatabase,
-  ref,
-  get,
-  runTransaction,
-  set,
-  remove,
-  off,
-  update,
-  push,
-  onValue,
-  child,
-} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-database.js";
-      import {
-        getAuth,
-        signInWithPopup,
-        GoogleAuthProvider,
-        FacebookAuthProvider,
-        OAuthProvider,
-        signOut,
-        onAuthStateChanged
-      } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
+         l1.5-1.5V6.25c0-.35-.4-.75-.75-.75h-3Z" />
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/nopa.design/" target="_blank" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5ZM12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7ZM17.5 6a1 1 0 1 1 0 2a1 1 0 0 1 0-2Z" />
+        </svg>
+      </a>
+      <a href="https://www.facebook.com/NopaProductDesign" target="_blank" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5a3.5 3.5 0 0 1 3.8-3.9c1.1 0 2.2.2 2.2.2v2.5H15a1.5 1.5 0 0 0-1.7 1.6V12H17l-.5 3h-2.2v7A10 10 0 0 0 22 12Z" />
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/company/nopa-pdx/" target="_blank" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6a2.5 2.5 0 0 1 2.48-2.5ZM3 8h4v13H3V8Zm7 0h3.6v1.8h.1a3.95 3.95 0 0 1 3.6-2c3.8 0 4.5 2.5 4.5 5.7V21h-4v-6.2c0-1.5 0-3.3-2-3.3c-2 0-2.3 1.6-2.3 3.2V21h-4V8Z" />
+        </svg>
+      </a>
+    </div>
+    <p>© 2025 NOPA DESIGN LLC. All rights reserved.</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module">
+    import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-analytics.js";
+    import {
+      getDatabase,
+      ref,
+      get,
+      runTransaction,
+      set,
+      remove,
+      off,
+      update,
+      push,
+      onValue,
+      child,
+    } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-database.js";
+    import {
+      getAuth,
+      signInWithPopup,
+      GoogleAuthProvider,
+      FacebookAuthProvider,
+      OAuthProvider,
+      signOut,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
 
-      const firebaseConfig = {
-        apiKey: "AIzaSyD2akq6BzDJrK5FgwjKsxIawvH6rhQupFo",
-        authDomain: "nopa-d644b.firebaseapp.com",
-        projectId: "nopa-d644b",
-        storageBucket: "nopa-d644b.firebasestorage.app",
-        databaseURL: "https://nopa-d644b-default-rtdb.asia-southeast1.firebasedatabase.app",
-        messagingSenderId: "490802969481",
-        appId: "1:490802969481:web:5830b955bfcf0d08a63f58",
-        measurementId: "G-J2LGKVYTWT"
-      };
+    const firebaseConfig = {
+      apiKey: "AIzaSyD2akq6BzDJrK5FgwjKsxIawvH6rhQupFo",
+      authDomain: "nopa-d644b.firebaseapp.com",
+      projectId: "nopa-d644b",
+      storageBucket: "nopa-d644b.firebasestorage.app",
+      databaseURL: "https://nopa-d644b-default-rtdb.asia-southeast1.firebasedatabase.app",
+      messagingSenderId: "490802969481",
+      appId: "1:490802969481:web:5830b955bfcf0d08a63f58",
+      measurementId: "G-J2LGKVYTWT"
+    };
 
-      const app = initializeApp(firebaseConfig);
-      getAnalytics(app);
+    const app = initializeApp(firebaseConfig);
+    getAnalytics(app);
 
 
 
-      /**
- * Get the total count of a tumbler
- * @param {string} tumblerId - ID of the tumbler
- * @returns {Promise<number>} - total_counts value
- */
-async function getTotalCount(tumblerId) {
-  if (!tumblerId) return 0; 
-  const tumblerRef = ref(realtimeDB, `tumblers/${tumblerId}`);
+    /**
+* Get the total count of a tumbler
+* @param {string} tumblerId - ID of the tumbler
+* @returns {Promise<number>} - total_counts value
+*/
+    async function getTotalCount(tumblerId) {
+      if (!tumblerId) return 0;
+      const tumblerRef = ref(realtimeDB, `tumblers/${tumblerId}`);
 
-  try {
-    const snapshot = await get(tumblerRef);
-    const tumbler = snapshot.val();
+      try {
+        const snapshot = await get(tumblerRef);
+        const tumbler = snapshot.val();
 
-    if (!tumbler || typeof tumbler.total_counts !== "number") return 0;
+        if (!tumbler || typeof tumbler.total_counts !== "number") return 0;
 
-    return tumbler.total_counts;
+        return tumbler.total_counts;
 
-  } catch (err) {
-    console.error("Error fetching total count:", err);
-    return 0;
-  }
-}
-
-
-      /**
- * Get top N history entries of a tumbler, ordered by created_at descending
- * @param {string} tumblerId - ID of the tumbler
- * @param {number} n - Number of top histories to return
- * @returns {Promise<Array>} - Array of history objects
- */
-async function getTopHistories(tumblerId, n = 3) {
-  if (!tumblerId) return []; 
-  const tumblerRef = ref(realtimeDB, `tumblers/${tumblerId}`);
-
-  try {
-    const snapshot = await get(tumblerRef);
-    const tumbler = snapshot.val();
-
-    if (!tumbler || !tumbler.history) return [];
-
-    // Sort by created_at descending
-    const sortedHistory = tumbler.history.sort((a, b) => 
-      new Date(b.created_at) - new Date(a.created_at)
-    );
-
-    // Return top N entries
-    return sortedHistory.slice(0, n);
-
-  } catch (err) {
-    console.error("Error fetching tumbler history:", err);
-    return [];
-  }
-}
-
-      /**
- * Calculate the monthly check-in count for a tumbler
- * @param {string} tumblerId - ID of the tumbler
- * @returns {Promise<number>} - Sum of counts for the current month
- */
-async function getMonthlyCheckin(tumblerId) {
-  if (!tumblerId) return 0; 
-  const tumblerRef = ref(realtimeDB, `tumblers/${tumblerId}`);
-
-  try {
-    const snapshot = await get(tumblerRef);
-    const tumbler = snapshot.val();
-
-    if (!tumbler || !tumbler.history) return 0;
-
-    // Get current month and year
-    const now = new Date();
-    const currentMonth = now.getMonth(); // 0-indexed (Jan=0)
-    const currentYear = now.getFullYear();
-
-    // Sum counts from history for the current month
-    const monthlyCheckin = tumbler.history.reduce((sum, entry) => {
-      const entryDate = new Date(entry.created_at);
-      if (entryDate.getMonth() === currentMonth && entryDate.getFullYear() === currentYear) {
-        return sum + (entry.count_added || 0);
+      } catch (err) {
+        console.error("Error fetching total count:", err);
+        return 0;
       }
-      return sum;
-    }, 0);
-
-    return monthlyCheckin;
-
-  } catch (err) {
-    console.error("Error fetching tumbler history:", err);
-    return 0;
-  }
-}
-      /**
- * Increment tumbler counts and add a history entry
- * @param {string} tumblerId - ID of the tumbler to update
- * @param {string} merchantId - Merchant performing the action
- * @param {number} count - Number of counts to add (default 1)
- */
-async function increaseTumblerCount(tumblerId, merchantId, merchantName, count = 1) {
-  const tumblerRef = ref(realtimeDB, `tumblers/${tumblerId}`);
-
-  await runTransaction(tumblerRef, (tumbler) => {
-    if (!tumbler) {
-      // Tumbler does not exist → optionally initialize
-      tumbler = {
-        total_counts: count,
-        history: [{
-          created_at: new Date().toISOString(),
-          created_by_merchant: merchantName,
-          created_by_merchant_id: merchantId,
-          count_added: count
-        }]
-      };
-    } else {
-      // Increment counts
-      tumbler.total_counts = (tumbler.total_counts || 0) + count;
-
-      // Initialize history array if missing
-      if (!tumbler.history) tumbler.history = [];
-
-      // Add history entry
-      tumbler.history.push({
-        created_at: new Date().toISOString(),
-        created_by_merchant: merchantName,
-        created_by_merchant_id: merchantId,
-        count_added: count
-      });
     }
-    return tumbler;
-  })
-  .then(() => console.log(`Tumbler ${tumblerId} counts incremented`))
-  .catch(err => console.error("Error incrementing tumbler count:", err));
-}
 
-      /**
-       * Add a new tumbler with the updated schema
-       * @param {string} tumblerId - Unique ID of the tumbler
-       * @param {string} userId - Owner of the tumbler
-       */
-      async function addTumbler(tumblerId, userId) {
-        const tumblerRef = ref(realtimeDB, `tumblers/${tumblerId}`);
 
-        await set(tumblerRef, {
-          user_ID: userId,
-          total_counts: 0,
-          history: [] // empty history initially
-        })
+    /**
+* Get top N history entries of a tumbler, ordered by created_at descending
+* @param {string} tumblerId - ID of the tumbler
+* @param {number} n - Number of top histories to return
+* @returns {Promise<Array>} - Array of history objects
+*/
+    async function getTopHistories(tumblerId, n = 3) {
+      if (!tumblerId) return [];
+      const tumblerRef = ref(realtimeDB, `tumblers/${tumblerId}`);
+
+      try {
+        const snapshot = await get(tumblerRef);
+        const tumbler = snapshot.val();
+
+        if (!tumbler || !tumbler.history) return [];
+
+        // Sort by created_at descending
+        const sortedHistory = tumbler.history.sort((a, b) =>
+          new Date(b.created_at) - new Date(a.created_at)
+        );
+
+        // Return top N entries
+        return sortedHistory.slice(0, n);
+
+      } catch (err) {
+        console.error("Error fetching tumbler history:", err);
+        return [];
+      }
+    }
+
+    /**
+* Calculate the monthly check-in count for a tumbler
+* @param {string} tumblerId - ID of the tumbler
+* @returns {Promise<number>} - Sum of counts for the current month
+*/
+    async function getMonthlyCheckin(tumblerId) {
+      if (!tumblerId) return 0;
+      const tumblerRef = ref(realtimeDB, `tumblers/${tumblerId}`);
+
+      try {
+        const snapshot = await get(tumblerRef);
+        const tumbler = snapshot.val();
+
+        if (!tumbler || !tumbler.history) return 0;
+
+        // Get current month and year
+        const now = new Date();
+        const currentMonth = now.getMonth(); // 0-indexed (Jan=0)
+        const currentYear = now.getFullYear();
+
+        // Sum counts from history for the current month
+        const monthlyCheckin = tumbler.history.reduce((sum, entry) => {
+          const entryDate = new Date(entry.created_at);
+          if (entryDate.getMonth() === currentMonth && entryDate.getFullYear() === currentYear) {
+            return sum + (entry.count_added || 0);
+          }
+          return sum;
+        }, 0);
+
+        return monthlyCheckin;
+
+      } catch (err) {
+        console.error("Error fetching tumbler history:", err);
+        return 0;
+      }
+    }
+    /**
+* Increment tumbler counts and add a history entry
+* @param {string} tumblerId - ID of the tumbler to update
+* @param {string} merchantId - Merchant performing the action
+* @param {number} count - Number of counts to add (default 1)
+*/
+    async function increaseTumblerCount(tumblerId, merchantId, merchantName, count = 1) {
+      const tumblerRef = ref(realtimeDB, `tumblers/${tumblerId}`);
+
+      await runTransaction(tumblerRef, (tumbler) => {
+        if (!tumbler) {
+          // Tumbler does not exist → optionally initialize
+          tumbler = {
+            total_counts: count,
+            history: [{
+              created_at: new Date().toISOString(),
+              created_by_merchant: merchantName,
+              created_by_merchant_id: merchantId,
+              count_added: count
+            }]
+          };
+        } else {
+          // Increment counts
+          tumbler.total_counts = (tumbler.total_counts || 0) + count;
+
+          // Initialize history array if missing
+          if (!tumbler.history) tumbler.history = [];
+
+          // Add history entry
+          tumbler.history.push({
+            created_at: new Date().toISOString(),
+            created_by_merchant: merchantName,
+            created_by_merchant_id: merchantId,
+            count_added: count
+          });
+        }
+        return tumbler;
+      })
+        .then(() => console.log(`Tumbler ${tumblerId} counts incremented`))
+        .catch(err => console.error("Error incrementing tumbler count:", err));
+    }
+
+    /**
+     * Add a new tumbler with the updated schema
+     * @param {string} tumblerId - Unique ID of the tumbler
+     * @param {string} userId - Owner of the tumbler
+     */
+    async function addTumbler(tumblerId, userId) {
+      const tumblerRef = ref(realtimeDB, `tumblers/${tumblerId}`);
+
+      await set(tumblerRef, {
+        user_ID: userId,
+        total_counts: 0,
+        history: [] // empty history initially
+      })
         .then(() => console.log("Tumbler added successfully"))
         .catch(err => console.error("Error adding tumbler:", err));
+    }
+
+
+    /**
+     * Remove a tumbler by its ID
+     * @param {string} tumblerId - ID of the tumbler to remove
+     */
+    async function removeTumbler(tumblerId) {
+      const tumblerRef = ref(realtimeDB, `tumblers/${tumblerId}`);
+
+      await remove(tumblerRef)
+        .then(() => console.log(`Tumbler ${tumblerId} removed successfully`))
+        .catch(err => console.error("Error removing tumbler:", err));
+    }
+
+
+
+
+    const historyList = document.getElementById("history-list");
+    const history = document.getElementById("history");
+
+    async function updateHistoryList() {
+      // Fetch top N histories
+      const histories = await getTopHistories(window.NOPA_DEVICE_ID, 3);
+      if (histories.length == 0) {
+        history.style.display = "none";
+      } else {
+        history.style.display = "block";
       }
+      // Clear existing list
+      historyList.innerHTML = "";
 
+      // Populate with latest histories
+      histories.forEach(entry => {
+        const li = document.createElement("li");
 
-      /**
-       * Remove a tumbler by its ID
-       * @param {string} tumblerId - ID of the tumbler to remove
-       */
-      async function removeTumbler(tumblerId) {
-        const tumblerRef = ref(realtimeDB, `tumblers/${tumblerId}`);
+        // Format date nicely
+        const date = new Date(entry.created_at);
+        const formattedDate = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()} ` +
+          `${date.getHours().toString().padStart(2, '0')}:` +
+          `${date.getMinutes().toString().padStart(2, '0')}:` +
+          `${date.getSeconds().toString().padStart(2, '0')}`;
 
-        await remove(tumblerRef)
-          .then(() => console.log(`Tumbler ${tumblerId} removed successfully`))
-          .catch(err => console.error("Error removing tumbler:", err));
-      }
+        li.textContent = `${formattedDate}: @${entry.created_by_merchant}`;
+        historyList.appendChild(li);
+      });
+    }
 
+    const monthlyGoal = 10;
 
-
-
-  const historyList = document.getElementById("history-list");
-  const history = document.getElementById("history");
-
-  async function updateHistoryList() {
-  // Fetch top N histories
-  const histories = await getTopHistories(window.NOPA_DEVICE_ID, 3);
-  if (histories.length == 0) {
-    history.style.display = "none";
-  } else {
-    history.style.display = "block";
-  }
-  // Clear existing list
-  historyList.innerHTML = "";
-
-  // Populate with latest histories
-  histories.forEach(entry => {
-    const li = document.createElement("li");
-
-    // Format date nicely
-    const date = new Date(entry.created_at);
-    const formattedDate = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()} ` +
-                          `${date.getHours().toString().padStart(2, '0')}:` +
-                          `${date.getMinutes().toString().padStart(2, '0')}:` +
-                          `${date.getSeconds().toString().padStart(2, '0')}`;
-
-    li.textContent = `${formattedDate}: @${entry.created_by_merchant}`;
-    historyList.appendChild(li);
-  });
-}
-
-const monthlyGoal = 10;
-
-// Monthly Reuse Bar Chart
-const ctxMonthly = document.getElementById('monthlyChart').getContext('2d');
-const monthlyChart = new Chart(ctxMonthly, {
-    type: 'bar',
-    data: {
+    // Monthly Reuse Bar Chart
+    const ctxMonthly = document.getElementById('monthlyChart').getContext('2d');
+    const monthlyChart = new Chart(ctxMonthly, {
+      type: 'bar',
+      data: {
         labels: ['This Month'],
         datasets: [{
-            label: 'Reuse Count',
-            data: [5],
-            backgroundColor: '#ff6f00',
-            borderRadius: 8,
-            barPercentage: 1.0,     // default 0.9
-            categoryPercentage: 0.8 // default 0.8
+          label: 'Reuse Count',
+          data: [5],
+          backgroundColor: '#ff6f00',
+          borderRadius: 8,
+          barPercentage: 1.0,     // default 0.9
+          categoryPercentage: 0.8 // default 0.8
         }]
-    },
-    options: {
+      },
+      options: {
         scales: {
-            y: {
-                beginAtZero: true,
-                max: monthlyGoal,
-                ticks: {
-                    stepSize: 1  // <- ensures 0,1,2,...,10
-                }
+          y: {
+            beginAtZero: true,
+            max: monthlyGoal,
+            ticks: {
+              stepSize: 1  // <- ensures 0,1,2,...,10
             }
+          }
         },
         plugins: {
-            legend: { display: false },
-            tooltip: { enabled: true }
+          legend: { display: false },
+          tooltip: { enabled: true }
         }
-    }
-});
+      }
+    });
 
-// Total Reuse Doughnut Chart
-const ctxTotal = document.getElementById('totalChart').getContext('2d');
-const totalChart = new Chart(ctxTotal, {
-    type: 'doughnut',
-    data: {
+    // Total Reuse Doughnut Chart
+    const ctxTotal = document.getElementById('totalChart').getContext('2d');
+    const totalChart = new Chart(ctxTotal, {
+      type: 'doughnut',
+      data: {
         labels: ['Gained', 'Remaining'],
         datasets: [{
-            data: [0, 30 - 0], // assume 500 as arbitrary max
-            backgroundColor: ['#ff6f00', '#eee'],
-            cutout: '70%'
+          data: [0, 30 - 0], // assume 500 as arbitrary max
+          backgroundColor: ['#ff6f00', '#eee'],
+          cutout: '70%'
         }]
-    },
-    options: {
+      },
+      options: {
         plugins: {
-            legend: { position: 'bottom' }
+          legend: { position: 'bottom' }
         }
-    }
-});
+      }
+    });
 
-// Function to fetch new data and update chart
-async function updateCharts() {
-    const monthlyCheckin = await getMonthlyCheckin(window.NOPA_DEVICE_ID);
-    const totalCheckin = await getTotalCount(window.NOPA_DEVICE_ID);
-    window.TOTAL_COUNT = totalCheckin;
-    if (totalCheckin == 0 || totalCheckin == undefined) {
-      details.style.display = "block";
-      stats.style.display = "none";
-      welcome.style.display = "none";
-    } else {
-      details.style.display = "none";
-      stats.style.display = "flex";
-      welcome.style.display = "block";
-    }
-  if (monthlyChart && monthlyChart.data.datasets[0]) {
-    monthlyChart.data.datasets[0].data[0] = monthlyCheckin;
-    monthlyChart.update();
-  }
-
-  if (totalChart && totalChart.data.datasets[0]) {
-    totalChart.data.datasets[0].data[0] = totalCheckin;
-    totalChart.update();
-  }
-}
-      // Listener function
-async function handleTumblerUpdate(snapshot) {
-  const tumbler = snapshot.val();
-  if (!tumbler) return;
-  await updateCharts();
-  await updateHistoryList();
-  console.log("Realtime update:", tumbler);
-}
-      /**
-       * 
-      */
-      async function subscribeTumblerUpdate(tumblerId) {
-          // Subscribe to Realtime DB changes
-          const tumblerRef = ref(realtimeDB, `tumblers/${tumblerId}`);
-          onValue(tumblerRef, handleTumblerUpdate);
+    // Function to fetch new data and update chart
+    async function updateCharts() {
+      const monthlyCheckin = await getMonthlyCheckin(window.NOPA_DEVICE_ID);
+      const totalCheckin = await getTotalCount(window.NOPA_DEVICE_ID);
+      window.TOTAL_COUNT = totalCheckin;
+      if (totalCheckin == 0 || totalCheckin == undefined) {
+        details.style.display = "block";
+        stats.style.display = "none";
+        welcome.style.display = "none";
+      } else {
+        details.style.display = "none";
+        stats.style.display = "flex";
+        welcome.style.display = "block";
+      }
+      if (monthlyChart && monthlyChart.data.datasets[0]) {
+        monthlyChart.data.datasets[0].data[0] = monthlyCheckin;
+        monthlyChart.update();
       }
 
-      async function unsubscribeTumblerUpdte(tumblerId) {
-          const tumblerRef = ref(realtimeDB, `tumblers/${tumblerId}`);
-          off(tumblerRef);
+      if (totalChart && totalChart.data.datasets[0]) {
+        totalChart.data.datasets[0].data[0] = totalCheckin;
+        totalChart.update();
       }
+    }
+    // Listener function
+    async function handleTumblerUpdate(snapshot) {
+      const tumbler = snapshot.val();
+      if (!tumbler) return;
+      await updateCharts();
+      await updateHistoryList();
+      console.log("Realtime update:", tumbler);
+    }
+    /**
+     * 
+    */
+    async function subscribeTumblerUpdate(tumblerId) {
+      // Subscribe to Realtime DB changes
+      const tumblerRef = ref(realtimeDB, `tumblers/${tumblerId}`);
+      onValue(tumblerRef, handleTumblerUpdate);
+    }
 
-      const auth = getAuth(app);
-      const db = getFirestore(app); // ✅ Define Firestore instance
-      const realtimeDB = getDatabase(app);
-      const googleProvider = new GoogleAuthProvider();
-      const facebookProvider = new FacebookAuthProvider();
-      const appleProvider = new OAuthProvider("apple.com");
+    async function unsubscribeTumblerUpdte(tumblerId) {
+      const tumblerRef = ref(realtimeDB, `tumblers/${tumblerId}`);
+      off(tumblerRef);
+    }
 
-      const googleBtn = document.getElementById("google-login");
-      const appleBtn = document.getElementById("apple-login");
-      const fbBtn = document.getElementById("facebook-login");
-      const logoutBtn = document.getElementById("logout");
-      const status = document.getElementById("status");
-      const details = document.getElementById("details");
-      const stats = document.getElementById("stats");
-      const welcome = document.getElementById("welcome");
+    const auth = getAuth(app);
+    const db = getFirestore(app); // ✅ Define Firestore instance
+    const realtimeDB = getDatabase(app);
+    const googleProvider = new GoogleAuthProvider();
+    const facebookProvider = new FacebookAuthProvider();
+    const appleProvider = new OAuthProvider("apple.com");
 
-      googleBtn.onclick = () => signInWithPopup(auth, googleProvider);
-      appleBtn.onclick = () => signInWithPopup(auth, appleProvider);
-      fbBtn.onclick = () => signInWithPopup(auth, facebookProvider);
-      logoutBtn.onclick = () => signOut(auth);
+    const googleBtn = document.getElementById("google-login");
+    const appleBtn = document.getElementById("apple-login");
+    const fbBtn = document.getElementById("facebook-login");
+    const logoutBtn = document.getElementById("logout");
+    const status = document.getElementById("status");
+    const details = document.getElementById("details");
+    const stats = document.getElementById("stats");
+    const welcome = document.getElementById("welcome");
 
-      const checkInBtn = document.getElementById("check-in");
-      checkInBtn.onclick = async function(event) {
-          try {
-              increaseTumblerCount(window.NOPA_DEVICE_ID, window.USER_ID, window.USER_DISPLAY_NAME);
-              alert("Successfully check in!");
-          } catch (error) {
-              console.error("Error checking in:", error);
-              alert("Failed to check in. Try again.");
-          }
-      };
+    googleBtn.onclick = () => signInWithPopup(auth, googleProvider);
+    appleBtn.onclick = () => signInWithPopup(auth, appleProvider);
+    fbBtn.onclick = () => signInWithPopup(auth, facebookProvider);
+    logoutBtn.onclick = () => signOut(auth);
 
-      const linkBtn = document.getElementById("link");
-      linkBtn.onclick = async function(event) {
-          try {
-              const userRef = doc(db, "users", window.USER_ID);
-              await setDoc(userRef, {
-                devices: [{
-                  [window.NOPA_DEVICE_ID]: {} // override previous device
-                }]
-              }, { merge: true }); // merge keeps other fields like email, role, createdAt
-              addTumbler(window.NOPA_DEVICE_ID, window.USER_ID);
-              subscribeTumblerUpdate(window.NOPA_DEVICE_ID);
-              alert("Successfully linked!");
-              //HIDE THE LINK BUTTON
-              unlinkBtn.style.display = "block";
-              linkBtn.style.display = "none";
-          } catch (error) {
-              console.error("Error linking:", error);
-              alert("Failed to link. Try again.");
-          }
-      };
+    const checkInBtn = document.getElementById("check-in");
+    checkInBtn.onclick = async function (event) {
+      try {
+        increaseTumblerCount(window.NOPA_DEVICE_ID, window.USER_ID, window.USER_DISPLAY_NAME);
+        alert("Successfully check in!");
+      } catch (error) {
+        console.error("Error checking in:", error);
+        alert("Failed to check in. Try again.");
+      }
+    };
 
-      const unlinkBtn = document.getElementById("unlink");
-      unlinkBtn.onclick = async function(event) {
-          const confirmed = confirm("Are you sure you want to unlink? Doing so will reset all data for this tumbler.");
-          if (!confirmed) return;
-          try {
-              const userRef = doc(db, "users", window.USER_ID);
-              await setDoc(userRef, {
-                devices: []
-              }, { merge: true });
-              removeTumbler(window.NOPA_DEVICE_ID);
-              unsubscribeTumblerUpdte(window.NOPA_DEVICE_ID);
-              alert("Successfully unlinked!");
-              //HIDE THE UNLINK BUTTON
-              unlinkBtn.style.display = "none";
-              linkBtn.style.display = "block";
-          } catch (error) {
-              console.error("Error unlinking:", error);
-              alert("Failed to unlink. Try again.");
-          }
-      };
-      const warningLabel = document.getElementById("warning");
+    const linkBtn = document.getElementById("link");
+    linkBtn.onclick = async function (event) {
+      try {
+        const userRef = doc(db, "users", window.USER_ID);
+        await setDoc(userRef, {
+          devices: [{
+            [window.NOPA_DEVICE_ID]: {} // override previous device
+          }]
+        }, { merge: true }); // merge keeps other fields like email, role, createdAt
+        addTumbler(window.NOPA_DEVICE_ID, window.USER_ID);
+        subscribeTumblerUpdate(window.NOPA_DEVICE_ID);
+        alert("Successfully linked!");
+        //HIDE THE LINK BUTTON
+        unlinkBtn.style.display = "block";
+        linkBtn.style.display = "none";
+      } catch (error) {
+        console.error("Error linking:", error);
+        alert("Failed to link. Try again.");
+      }
+    };
 
-      onAuthStateChanged(auth, async (user) => {
+    const unlinkBtn = document.getElementById("unlink");
+    unlinkBtn.onclick = async function (event) {
+      const confirmed = confirm("Are you sure you want to unlink? Doing so will reset all data for this tumbler.");
+      if (!confirmed) return;
+      try {
+        const userRef = doc(db, "users", window.USER_ID);
+        await setDoc(userRef, {
+          devices: []
+        }, { merge: true });
+        removeTumbler(window.NOPA_DEVICE_ID);
+        unsubscribeTumblerUpdte(window.NOPA_DEVICE_ID);
+        alert("Successfully unlinked!");
+        //HIDE THE UNLINK BUTTON
+        unlinkBtn.style.display = "none";
+        linkBtn.style.display = "block";
+      } catch (error) {
+        console.error("Error unlinking:", error);
+        alert("Failed to unlink. Try again.");
+      }
+    };
+    const warningLabel = document.getElementById("warning");
+
+    onAuthStateChanged(auth, async (user) => {
       const slider = document.querySelector(".slider");
       const sliderNav = document.querySelector(".slider-nav");
       const merchantDiv = document.querySelector(".merchant");
       const userDiv = document.querySelector(".user");
-        if (user) {
-          status.textContent = `👋 Hi, ${user.displayName || "User"}`;
-          googleBtn.style.display =
-            appleBtn.style.display =
-            fbBtn.style.display =
-              "none";
-          logoutBtn.style.display = "block";
-          // Hide slider once signed in
+      if (user) {
+        status.textContent = `👋 Hi, ${user.displayName || "User"}`;
+        googleBtn.style.display =
+          appleBtn.style.display =
+          fbBtn.style.display =
+          "none";
+        logoutBtn.style.display = "block";
+        // Hide slider once signed in
         slider.style.display = "none";
         sliderNav.style.display = "none";
-          window.USER_ID = user.uid;
-          window.USER_DISPLAY_NAME = user.displayName;
+        window.USER_ID = user.uid;
+        window.USER_DISPLAY_NAME = user.displayName;
         // Fetch role from Firestore (assuming stored as users/{uid}.role)
         const userRef = doc(db, "users", user.uid);
         const userSnap = await getDoc(userRef);
@@ -1085,49 +1068,49 @@ async function handleTumblerUpdate(snapshot) {
             const welcome = document.getElementById("welcome");
             const firstDeviceId = userSnap.data().devices?.[0] ? Object.keys(userSnap.data().devices[0])[0] : null;
             if (firstDeviceId == null) {
-                unlinkBtn.style.display = "none";
-                linkBtn.style.display = "block";
-                warningLabel.style.display = "none";
-                if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    updateCharts();
-    updateHistoryList();
-  });
-} else {
-  // DOM already ready
-  updateCharts();
-  updateHistoryList();
-}
-                // document.addEventListener('DOMContentLoaded', () => {
-                //    updateCharts();
-                //    updateHistoryList();
-                // });
+              unlinkBtn.style.display = "none";
+              linkBtn.style.display = "block";
+              warningLabel.style.display = "none";
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => {
+                  updateCharts();
+                  updateHistoryList();
+                });
+              } else {
+                // DOM already ready
+                updateCharts();
+                updateHistoryList();
+              }
+              // document.addEventListener('DOMContentLoaded', () => {
+              //    updateCharts();
+              //    updateHistoryList();
+              // });
 
             } else if (firstDeviceId == window.NOPA_DEVICE_ID) {
-                unlinkBtn.style.display = "block";
-                linkBtn.style.display = "none";
-                warningLabel.style.display = "none";
-                if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    updateCharts();
-    updateHistoryList();
-    subscribeTumblerUpdate(firstDeviceId);
-  });
-} else {
-  // DOM already ready
-  updateCharts();
-  updateHistoryList();
-  subscribeTumblerUpdate(firstDeviceId);
-}
-                // document.addEventListener('DOMContentLoaded', () => {
-                //    updateCharts();
-                //    updateHistoryList();
-                //    subscribeTumblerUpdate(firstDeviceId);
-                // });
+              unlinkBtn.style.display = "block";
+              linkBtn.style.display = "none";
+              warningLabel.style.display = "none";
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => {
+                  updateCharts();
+                  updateHistoryList();
+                  subscribeTumblerUpdate(firstDeviceId);
+                });
+              } else {
+                // DOM already ready
+                updateCharts();
+                updateHistoryList();
+                subscribeTumblerUpdate(firstDeviceId);
+              }
+              // document.addEventListener('DOMContentLoaded', () => {
+              //    updateCharts();
+              //    updateHistoryList();
+              //    subscribeTumblerUpdate(firstDeviceId);
+              // });
             } else {
-                unlinkBtn.style.display = "none";
-                linkBtn.style.display = "none";
-                warningLabel.style.display = "block";              
+              unlinkBtn.style.display = "none";
+              linkBtn.style.display = "none";
+              warningLabel.style.display = "block";
             }
 
             // details.textContent = `TODO: Get real time database and show here`;
@@ -1138,7 +1121,7 @@ async function handleTumblerUpdate(snapshot) {
           userDiv.style.display = "block"; // fallback
           // Create a new user doc if it doesn't exist
           if (deviceId == undefined) {
-              await setDoc(userRef, {
+            await setDoc(userRef, {
               email: user.email,
               role: "user", // default role
               createdAt: new Date().toISOString(),
@@ -1157,20 +1140,21 @@ async function handleTumblerUpdate(snapshot) {
           }
           console.log("New user created in Firestore with role 'user'");
         }
-        } else {
-          status.textContent = "Not log in";
-          googleBtn.style.display =
-            appleBtn.style.display =
-            fbBtn.style.display =
-              "block";
-          logoutBtn.style.display = "none";
-                  // Not signed in: show slider, hide others
+      } else {
+        status.textContent = "Not log in";
+        googleBtn.style.display =
+          appleBtn.style.display =
+          fbBtn.style.display =
+          "block";
+        logoutBtn.style.display = "none";
+        // Not signed in: show slider, hide others
         slider.style.display = "block";
         sliderNav.style.display = "flex";
         merchantDiv.style.display = "none";
         userDiv.style.display = "none";
-        }
-      });
-    </script>
-  </body>
+      }
+    });
+  </script>
+</body>
+
 </html>
