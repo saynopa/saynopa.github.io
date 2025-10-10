@@ -504,12 +504,9 @@
       </div>
     </div>
 
-    <div id="history" class="history">
+    <div id="history" style="display:none" class="history">
       <h4>Recent Uses</h4>
       <ul id="history-list">
-        <li>10/10/2025: Reused tumbler #123</li>
-        <li>10/09/2025: Reused tumbler #124</li>
-        <li>10/08/2025: Reused tumbler #125</li>
       </ul>
     </div>
 
@@ -770,6 +767,7 @@
       await runTransaction(tumblerRef, (tumbler) => {
         if (!tumbler) {
           // Tumbler does not exist → optionally initialize
+          // return;
           tumbler = {
             total_counts: count,
             history: [{
@@ -873,7 +871,7 @@
         labels: ['This Month'],
         datasets: [{
           label: 'Reuse Count',
-          data: [5],
+          data: [0],
           backgroundColor: '#ff6f00',
           borderRadius: 8,
           barPercentage: 1.0,     // default 0.9
@@ -957,7 +955,7 @@
       onValue(tumblerRef, handleTumblerUpdate);
     }
 
-    async function unsubscribeTumblerUpdte(tumblerId) {
+    async function unsubscribeTumblerUpdate(tumblerId) {
       const tumblerRef = ref(realtimeDB, `tumblers/${tumblerId}`);
       off(tumblerRef);
     }
@@ -1005,6 +1003,8 @@
         }, { merge: true }); // merge keeps other fields like email, role, createdAt
         addTumbler(window.NOPA_DEVICE_ID, window.USER_ID);
         subscribeTumblerUpdate(window.NOPA_DEVICE_ID);
+        updateCharts(window.NOPA_DEVICE_ID);
+        updateHistoryList(window.NOPA_DEVICE_ID);
         alert("Successfully linked!");
         //HIDE THE LINK BUTTON
         unlinkBtn.style.display = "block";
@@ -1025,7 +1025,9 @@
           devices: []
         }, { merge: true });
         removeTumbler(window.NOPA_DEVICE_ID);
-        unsubscribeTumblerUpdte(window.NOPA_DEVICE_ID);
+        unsubscribeTumblerUpdate(window.NOPA_DEVICE_ID);
+        updateCharts("UNKNOW_DEVICE");
+        updateHistoryList("UNKNOW_DEVICE");
         alert("Successfully unlinked!");
         //HIDE THE UNLINK BUTTON
         unlinkBtn.style.display = "none";
